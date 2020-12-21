@@ -6,13 +6,13 @@ For more information you can read here: https://github.com/suuhm/unblock-proxy.s
 
 #### Pull image
 ```bash
-docker pull suuhm/docker-unblock-proxy 
+docker pull suuhm/unblock-proxy 
 ```
 
 ### Run Examples
 #### Run image default (proxychains) - stdout
 ```bash
-docker run -it --privileged --net=host --dns 1.1.1.1 --name=unblock_proxy_default suuhm/docker-unblock-proxy 
+docker run -it --privileged --net=host --dns 1.1.1.1 --name=unblock_proxy_default suuhm/unblock-proxy 
 ```
 
 #### Run image smartdns/squid - daemon-background
@@ -24,7 +24,7 @@ docker run -itd \
        -e MODE=dns \
        -e NGINE=squid \
        --name=unblock_proxy_squid \
-       suuhm/docker-unblock-proxy 
+       suuhm/unblock-proxy 
 ```
 
 #### Run image smartdns/redsocks - daemon-background - Docker bridged mode
@@ -40,7 +40,7 @@ docker run -itd \
        -e MODE=dns \
        -e NGINE=squid \
        --name=unblock_proxy_redsocks \
-       suuhm/docker-unblock-proxy 
+       suuhm/unblock-proxy 
 ```
 
 #### Possible Args
