@@ -23,5 +23,5 @@ ENV NGINE proxychains
 
 #ENTRYPOINT [ "/bin/bash" ]
 CMD echo "Starting BASH ENVMT..." && \
-    /bin/bash -c "unblock-proxy.sh ${MODE} --${NGINE} -W -d" && \
+    /bin/bash -c "unblock-proxy.sh ${MODE} --${NGINE} -W -d" ; \
     /bin/bash -c "tail -f /opt/unblock-proxy.sh/web-acp/web-tail.log
