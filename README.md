@@ -1,7 +1,45 @@
+![Thumb](https://raw.githubusercontent.com/suuhm/unblock-proxy.sh/main/img/unblock-version.gif)
+
 # docker-unblock-proxy
 Easy-to-use Docker Image to offer your own SmartDNS or SmartGateway -proxy. For your entire network! The swiss army knife in geoblocking. 
 
-This is the official docker container image of my shell script without install/compiling trouble. Here is also the webbackend included for easy manage the proxy- and domains-list!
+# Background - Why this script?
+There are many devices in my network, which do not allow to set a proxy manually, I have always had to prepare my router or a computer, which was a lot of time and configuration effort.
+
+With this docker image, I have the possibility to offer a proxy in my whole network for desired domains. Even if DNS or transparent router.
+Furthermore I can choose which proxy engine should be used. 
+
+This Script uses a List of (Free)-Proxies and Domains that allows you to set up unrestricted access to streaming content on your smart-TV, Kodi, Emby Mediaserver and other devices to watch your media region-free like:
+
+    Zattoo
+    HULU (US region)
+    Netflix Originals
+    Amazon Prime
+    BBC iPlayer
+    Youtube
+    Discovery
+    Disney Channel Plus
+    Fox Now / Sports Go / News / Showtime
+    HBO Now
+    
+    And many, many many more!
+
+#### It's not a VPN! And this will save your bandwidth massively
+
+# Features
+#### Main Modes:
+- Router (transparent) Mode (This can be use on a OpenWRT Route or something similar)
+- Smart (DNS) Mode (Set this to any device where you can set a DNS Server Setting)
+#### Proxy Engines:
+- Tor
+- Squid (incl. Certcreator for SSL-Bump Functionality)
+- Redsocks
+- Proxychains
+
+![Thumb](https://raw.githubusercontent.com/suuhm/unblock-proxy.sh/main/img/unblock-dns-redsocks.gif)
+
+
+#### This is the official docker container image of my shell script without install/compiling trouble. Here is also the webbackend included for easy manage the proxy- and domains-list!
 For more information you can read here: https://github.com/suuhm/unblock-proxy.sh
 
 #### Pull image
@@ -38,7 +76,7 @@ docker run -itd \
        -p 53:53/udp \
        -p 8383:8383/tcp
        -e MODE=dns \
-       -e NGINE=squid \
+       -e NGINE=redsocks \
        --name=unblock_proxy_redsocks \
        suuhm/unblock-proxy 
 ```
